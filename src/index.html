@@ -10,17 +10,18 @@
     <main>
         <h1>Leaderboard</h1>
         <section>
-            <div class="recent-scores">
-                <div>
+            <div class="recent-scores-container">
+                <div class="recent-scores-heading">
                     <h2>Recent scores</h2>
-                    <button>Refresh</button>
+                    <button class="refresh">Refresh</button>
                 </div>
+                <div class="scorecard"></div>
             </div>
             <div class="add-score">
                 <h2>Add your score</h2>
                 <input type="text" placeholder="Your name" required>
                 <input type="text" placeholder="Your score" required>
-                <button type="submit">Submit</button>
+                <button type="submit" class="submit">Submit</button>
             </div>
         </section>
     </main>
