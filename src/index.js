@@ -33,13 +33,15 @@ const sendRequest = async (url, method = 'GET', data = {}) => {
 
 
 // Create a new game
-const createGame = async (name) => {
-  const url = baseURL + 'games/';
-  const data = { name };
+// const createGame = async (name) => {
+//   const url = baseURL + 'games/';
+//   const data = { name };
 
-  const result = await sendRequest(url, 'POST', data);
-  return result;
-};
+//   const result = await sendRequest(url, 'POST', data);
+//   return result;
+// };
+
+// createGame('FGames');
 
 // Get scores for a specific game
 const getScores = async (gameId) => {
