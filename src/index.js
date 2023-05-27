@@ -31,6 +31,9 @@ const sendRequest = async (url, method = 'GET', data = {}) => {
     const feedback = document.getElementById('feedback');
     feedback.innerHTML = `${error.message}`;
   }
+  
+  // To adhere to consistent-return
+  return null;
 };
 
 // Create a new game
