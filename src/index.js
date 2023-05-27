@@ -62,7 +62,6 @@ const refreshButton = document.querySelector('.refresh');
 refreshButton.addEventListener('click', async () => {
   const gameId = 'FortuneuzodinmA';
   const scores = await getScores(gameId);
-  console.log(scores);
   const scoreCard = document.querySelector('.scorecard');
   scoreCard.innerHTML = '';
   scores.result.forEach((entry) => {
@@ -81,7 +80,6 @@ submitButton.addEventListener('click', async () => {
   const user = nameInput.value;
   const score = Number(scoreInput.value);
   const result = await submitScore(gameId, user, score);
-  console.log(result); 
   nameInput.value = '';
   scoreInput.value = '';
 });
