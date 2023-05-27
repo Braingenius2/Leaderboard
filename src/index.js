@@ -27,7 +27,6 @@ const sendRequest = async (url, method = 'GET', data = {}) => {
     const result = await response.json();
     return result;
   } catch (error) {
-    
     // Display error message in feedback element
     const feedback = document.getElementById('feedback');
     feedback.innerHTML = `${error.message}`;
