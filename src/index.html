@@ -15,21 +15,14 @@
                     <h2>Recent scores</h2>
                     <button class="refresh">Refresh</button>
                 </div>
-                <div class="scorecard">
-                    <div><span>Name: </span><span>100</span></div>
-                    <div><span>Name: </span><span>100</span></div>
-                    <div><span>Name: </span><span>100</span></div>
-                    <div><span>Name: </span><span>100</span></div>
-                    <div><span>Name: </span><span>100</span></div>
-                    <div><span>Name: </span><span>100</span></div>
-                    <div><span>Name: </span><span>100</span></div>
-                </div>
+                <div class="scorecard"></div>
             </div>
             <div class="add-score">
                 <h2>Add your score</h2>
-                <input type="text" placeholder="Your name" required>
-                <input type="text" placeholder="Your score" required>
+                <input type="text" placeholder="Your name" required id="name-input">
+                <input type="text" placeholder="Your score" required id="score-input">
                 <button type="submit" class="submit">Submit</button>
+                <p id="feedback"></p>
             </div>
         </section>
     </main>
