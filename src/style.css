@@ -72,3 +72,7 @@ button {
 .scorecard div:nth-child(odd) {
   background-color: white;
 }
+
+#feedback {
+  background-color: bisque;
+}

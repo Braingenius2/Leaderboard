@@ -82,6 +82,10 @@ submitButton.addEventListener('click', async () => {
   const result = await submitScore(gameId, user, score);
   nameInput.value = '';
   scoreInput.value = '';
+
+  // Display success status in feedback element
+  const feedback = document.getElementById('feedback');
+  feedback.innerHTML = `${result.result}`;
 });
 
 
