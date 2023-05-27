@@ -4,27 +4,6 @@ import './style.css';
 const baseURL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/';
 
 // Function to handle API requests
-// const sendRequest = async (url, method = 'GET', data = {}) => {
-//   try {
-//     const response = await fetch(url, {
-//       method,
-//       headers: {
-//         'Content-Type': 'application/json',
-//       },
-//       body: JSON.stringify(data),
-//     });
-
-//     if (!response.ok) {
-//       throw new Error('Request failed.');
-//     }
-
-//     const result = await response.json();
-//     return result;
-//   } catch (error) {
-//     console.error('Error:', error.message);
-//   }
-// };
-
 const sendRequest = async (url, method = 'GET', data = {}) => {
   try {
     const requestOptions = {
@@ -88,7 +67,7 @@ refreshButton.addEventListener('click', async () => {
   scoreCard.innerHTML = '';
   scores.result.forEach((entry) => {
     const div = document.createElement('div');
-    div.innerHTML = `<span>Name: </span><span>${entry.score}</span>`;
+    div.innerHTML = `<span>${entry.user}: </span><span>${entry.score}</span>`;
     scoreCard.appendChild(div);
   });
 });
