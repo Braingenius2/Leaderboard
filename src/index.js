@@ -4,15 +4,42 @@ import './style.css';
 const baseURL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/';
 
 // Function to handle API requests
+// const sendRequest = async (url, method = 'GET', data = {}) => {
+//   try {
+//     const response = await fetch(url, {
+//       method,
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//       body: JSON.stringify(data),
+//     });
+
+//     if (!response.ok) {
+//       throw new Error('Request failed.');
+//     }
+
+//     const result = await response.json();
+//     return result;
+//   } catch (error) {
+//     console.error('Error:', error.message);
+//   }
+// };
+
 const sendRequest = async (url, method = 'GET', data = {}) => {
   try {
-    const response = await fetch(url, {
+    const requestOptions = {
       method,
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(data),
-    });
+    };
+
+    // Add the body only for non-GET requests
+    if (method !== 'GET') {
+      requestOptions.body = JSON.stringify(data);
+    }
+
+    const response = await fetch(url, requestOptions);
 
     if (!response.ok) {
       throw new Error('Request failed.');
@@ -24,6 +51,7 @@ const sendRequest = async (url, method = 'GET', data = {}) => {
     console.error('Error:', error.message);
   }
 };
+
 
 // Create a new game
 const createGame = async (name) => {
