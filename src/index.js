@@ -64,4 +64,18 @@ refreshButton.addEventListener('click', async () => {
   });
 });
 
+// Event listener for submit button
+const submitButton = document.querySelector('.submit');
+submitButton.addEventListener('click', async () => {
+  const gameId = 'FortuneuzodinmA';
+  const nameInput = document.querySelector('input[type="text"][placeholder="Your name"]');
+  const scoreInput = document.querySelector('input[type="text"][placeholder="Your score"]');
+  const user = nameInput.value;
+  const score = Number(scoreInput.value);
+  const result = await submitScore(gameId, user, score);
+  console.log(result); 
+  nameInput.value = '';
+  scoreInput.value = '';
+});
+
 
