@@ -27,10 +27,11 @@ const sendRequest = async (url, method = 'GET', data = {}) => {
     const result = await response.json();
     return result;
   } catch (error) {
-    console.error('Error:', error.message);
+    // Display error message in feedback element
+    const feedback = document.getElementById('feedback');
+    feedback.innerHTML = `${error.message}`;
   }
 };
-
 
 // Create a new game
 // const createGame = async (name) => {
@@ -45,14 +46,14 @@ const sendRequest = async (url, method = 'GET', data = {}) => {
 
 // Get scores for a specific game
 const getScores = async (gameId) => {
-  const url = baseURL + `games/${gameId}/scores/`;
+  const url = `${baseURL}games/${gameId}/scores/`;
   const result = await sendRequest(url);
   return result;
 };
 
 // Submit a new score for a specific game
 const submitScore = async (gameId, user, score) => {
-  const url = baseURL + `games/${gameId}/scores/`;
+  const url = `${baseURL}games/${gameId}/scores/`;
   const data = { user, score };
 
   const result = await sendRequest(url, 'POST', data);
@@ -89,5 +90,3 @@ submitButton.addEventListener('click', async () => {
   const feedback = document.getElementById('feedback');
   feedback.innerHTML = `${result.result}`;
 });
-
-
