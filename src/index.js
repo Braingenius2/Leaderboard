@@ -55,6 +55,7 @@ const refreshButton = document.querySelector('.refresh');
 refreshButton.addEventListener('click', async () => {
   const gameId = 'FortuneuzodinmA';
   const scores = await getScores(gameId);
+  console.log(scores);
   const scoreCard = document.querySelector('.scorecard');
   scoreCard.innerHTML = '';
   scores.result.forEach((entry) => {
@@ -68,8 +69,8 @@ refreshButton.addEventListener('click', async () => {
 const submitButton = document.querySelector('.submit');
 submitButton.addEventListener('click', async () => {
   const gameId = 'FortuneuzodinmA';
-  const nameInput = document.querySelector('input[type="text"][placeholder="Your name"]');
-  const scoreInput = document.querySelector('input[type="text"][placeholder="Your score"]');
+  const nameInput = document.getElementById('name-input');
+  const scoreInput = document.getElementById('score-input');
   const user = nameInput.value;
   const score = Number(scoreInput.value);
   const result = await submitScore(gameId, user, score);
