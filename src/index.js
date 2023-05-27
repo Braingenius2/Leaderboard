@@ -27,6 +27,7 @@ const sendRequest = async (url, method = 'GET', data = {}) => {
     const result = await response.json();
     return result;
   } catch (error) {
+    
     // Display error message in feedback element
     const feedback = document.getElementById('feedback');
     feedback.innerHTML = `${error.message}`;
@@ -35,17 +36,6 @@ const sendRequest = async (url, method = 'GET', data = {}) => {
   // To adhere to consistent-return
   return null;
 };
-
-// Create a new game
-// const createGame = async (name) => {
-//   const url = baseURL + 'games/';
-//   const data = { name };
-
-//   const result = await sendRequest(url, 'POST', data);
-//   return result;
-// };
-
-// createGame('FGames');
 
 // Get scores for a specific game
 const getScores = async (gameId) => {
