@@ -28,6 +28,7 @@ main {
   display: flex;
   flex-direction: column;
   height: 95vh;
+  padding: 2rem;
 }
 
 main h1 {
@@ -38,9 +39,9 @@ main h1 {
 
 #leaderboard {
   display: flex;
+  justify-content: space-between;
   width: 90%;
   align-self: center;
-  gap: 10%;
 }
 
 h2 {
@@ -66,6 +67,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: 10%;
+  width: 30%;
 }
 
 .add-score h2 {
@@ -77,19 +79,22 @@ button {
 }
 
 .recent-scores-container {
-  width: 40%;
+  width: 50%;
 }
 
 .scorecard {
   border: 3px solid black;
+  margin-bottom: 1rem;
 }
 
 .scorecard div:nth-child(even) {
   background-color: rgb(208, 203, 203);
+  padding: 0.5rem;
 }
 
 .scorecard div:nth-child(odd) {
   background-color: white;
+  padding: 0.5rem;
 }
 
 #feedback {
