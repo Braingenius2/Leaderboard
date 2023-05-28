@@ -55,8 +55,30 @@ h2 {
   padding: 0.6em 0;
 }
 
+/* Buttons and input fields */
+button,
+input {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+
 button {
-  padding: 0.4em;
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+}
+
+input {
+  border: 1px solid var(--text-color);
+  margin-bottom: 1rem;
 }
 
 .refresh {
