@@ -130,3 +130,8 @@ footer {
   padding: 1rem;
   text-align: center;
 }
+
+.header-text,
+.footer-text {
+  color: white;
+}
